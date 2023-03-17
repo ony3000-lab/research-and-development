@@ -166,6 +166,8 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
     plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {
