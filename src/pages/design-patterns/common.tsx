@@ -5,7 +5,7 @@ export default function CommonPattern() {
   return (
     <>
       <PageHead title="Common Pattern" />
-      <main className="min-h-screen mx-auto p-8 prose dark:prose-invert">
+      <main className="prose mx-auto min-h-screen p-8 dark:prose-invert">
         <h1>Common Pattern</h1>
 
         <p>

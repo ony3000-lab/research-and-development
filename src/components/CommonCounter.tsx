@@ -33,22 +33,22 @@ export default function CommonCounter({
   };
 
   return (
-    <div className="inline-flex items-center border-2 border-solid border-blue-500 dark:border-sky-400 rounded-md space-x-1">
+    <div className="inline-flex items-center space-x-1 rounded-md border-2 border-solid border-blue-500 dark:border-sky-400">
       <button
         type="button"
-        className="p-1 rounded-md"
+        className="rounded-md p-1"
         onClick={decrementHandler}
       >
-        <MinusIcon className="w-6 h-6" />
+        <MinusIcon className="h-6 w-6" />
       </button>
       <span className="px-1">{label}</span>
-      <span className="font-bold px-1">{count}</span>
+      <span className="px-1 font-bold">{count}</span>
       <button
         type="button"
-        className="p-1 rounded-md"
+        className="rounded-md p-1"
         onClick={incrementHandler}
       >
-        <PlusIcon className="w-6 h-6" />
+        <PlusIcon className="h-6 w-6" />
       </button>
     </div>
   );
