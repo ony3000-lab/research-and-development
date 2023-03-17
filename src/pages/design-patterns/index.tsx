@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import PageHead from '@/components/PageHead';
 
 export default function DesignPatterns() {
@@ -35,6 +36,15 @@ export default function DesignPatterns() {
                     </a>
                   </li>
                 </ul>
+              </li>
+              <li>
+                <h3>Patterns</h3>
+
+                <ol start={0}>
+                  <li>
+                    <Link href="/design-patterns/common">Common Pattern</Link>
+                  </li>
+                </ol>
               </li>
             </ul>
           </li>
