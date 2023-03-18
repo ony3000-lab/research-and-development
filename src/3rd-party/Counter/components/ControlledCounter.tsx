@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
-import type { CounterContextState } from '../contexts';
-
 import { useState, useMemo } from 'react';
+import type { CounterContextState } from '../contexts';
 import { CounterContext } from '../contexts';
 
 // 재사용
