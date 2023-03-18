@@ -9,7 +9,7 @@ export default function CounterCount({ max = 10 }: CounterCountProps) {
   const { count, maxCount, setMaxCount } = useContext(CounterContext);
 
   useEffect(() => {
-    if (maxCount === undefined) {
+    if (maxCount !== max) {
       setMaxCount(max);
     }
   }, [max, maxCount, setMaxCount]);
