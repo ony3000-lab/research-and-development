@@ -44,6 +44,11 @@ export default function DesignPatterns() {
                   <li>
                     <Link href="/design-patterns/common">Common Pattern</Link>
                   </li>
+                  <li>
+                    <Link href="/design-patterns/compound-components">
+                      Compound Components Pattern
+                    </Link>
+                  </li>
                 </ol>
               </li>
             </ul>
