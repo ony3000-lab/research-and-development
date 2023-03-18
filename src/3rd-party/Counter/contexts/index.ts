@@ -17,3 +17,11 @@ export const CounterContext = createContext<CounterContextState>({
   decrementHandler: () => {},
   incrementHandler: () => {},
 });
+
+export type CounterContextWithHookState = {
+  count: number;
+};
+
+export const CounterContextWithHook = createContext<CounterContextWithHookState>({
+  count: 0,
+});

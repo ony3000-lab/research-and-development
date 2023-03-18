@@ -6,3 +6,6 @@ export { CompoundCounter } from './components/CompoundCounter';
 
 // 2. Control Props Pattern
 export { ControlledCounter } from './components/ControlledCounter';
+
+// 3. Custom Hook Pattern
+export { HookedCounter } from './components/HookedCounter';
