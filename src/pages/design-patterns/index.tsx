@@ -49,6 +49,9 @@ export default function DesignPatterns() {
                       Compound Components Pattern
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/design-patterns/control-props">Control Props Pattern</Link>
+                  </li>
                 </ol>
               </li>
             </ul>
