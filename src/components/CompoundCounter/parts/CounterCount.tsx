@@ -5,7 +5,7 @@ type CounterCountProps = {
   max?: number;
 };
 
-export default function CounterCount({ max = 10 }: CounterCountProps) {
+export default function CounterCount({ max = Infinity }: CounterCountProps) {
   const { count, maxCount, setMaxCount } = useContext(CounterContext);
 
   useEffect(() => {

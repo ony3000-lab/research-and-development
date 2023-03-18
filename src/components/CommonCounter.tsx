@@ -9,7 +9,7 @@ type CommonCounterProps = {
 
 export default function CommonCounter({
   label = 'Counter',
-  max = 10,
+  max = Infinity,
   onChange = undefined,
 }: CommonCounterProps) {
   const min = 0;
