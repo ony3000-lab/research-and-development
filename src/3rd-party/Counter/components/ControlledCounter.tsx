@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
-import type { CounterContextState } from '@/contexts';
+import type { CounterContextState } from '../contexts';
 
 import { useState, useMemo } from 'react';
-import { CounterContext } from '@/contexts';
+import { CounterContext } from '../contexts';
 
 // 재사용
 import {
@@ -10,7 +10,7 @@ import {
   CounterDecrement,
   CounterIncrement,
   CounterLabel,
-} from '@/components/CompoundCounter/parts';
+} from './CompoundCounter/parts';
 
 type ControlledCounterProps = {
   value: number;

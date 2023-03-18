@@ -1,5 +1,5 @@
 import PageHead from '@/components/PageHead';
-import CommonCounter from '@/components/CommonCounter';
+import { CommonCounter as Counter } from '@/3rd-party/Counter';
 
 export default function CommonPattern() {
   return (
@@ -32,7 +32,7 @@ export default function CommonPattern() {
         <section>
           <h2>사용 예</h2>
 
-          <CommonCounter
+          <Counter
             label="Counter"
             max={10}
             onChange={(newCount) => console.log('count changed:', newCount)}

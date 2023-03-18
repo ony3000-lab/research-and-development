@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { CounterContext } from '@/contexts';
+import { CounterContext } from '../../../contexts';
 
 type CounterCountProps = {
   max?: number;

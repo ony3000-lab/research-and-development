@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { PlusIcon } from '@heroicons/react/24/solid';
-import { CounterContext } from '@/contexts';
+import { CounterContext } from '../../../contexts';
 
 export default function CounterIncrement() {
   const { incrementHandler } = useContext(CounterContext);

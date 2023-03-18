@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
-import type { CounterContextState } from '@/contexts';
+import type { CounterContextState } from '../../contexts';
 
 import { useState, useMemo } from 'react';
-import { CounterContext } from '@/contexts';
+import { CounterContext } from '../../contexts';
 import { CounterCount, CounterDecrement, CounterIncrement, CounterLabel } from './parts';
 
 type CompoundCounterProps = {

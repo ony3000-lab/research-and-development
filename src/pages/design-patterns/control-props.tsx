@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PageHead from '@/components/PageHead';
-import { ControlledCounter as Counter } from '@/components/ControlledCounter';
+import { ControlledCounter as Counter } from '@/3rd-party/Counter';
 
 export default function ControlProps() {
   const [firstCount, setFirstCount] = useState(0);
