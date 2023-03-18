@@ -52,6 +52,9 @@ export default function DesignPatterns() {
                   <li>
                     <Link href="/design-patterns/control-props">Control Props Pattern</Link>
                   </li>
+                  <li>
+                    <Link href="/design-patterns/custom-hook">Custom Hook Pattern</Link>
+                  </li>
                 </ol>
               </li>
             </ul>
