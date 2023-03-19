@@ -58,6 +58,9 @@ export default function DesignPatterns() {
                   <li>
                     <Link href="/design-patterns/props-getters">Props Getters Pattern</Link>
                   </li>
+                  <li>
+                    <Link href="/design-patterns/state-reducer">State Reducer Pattern</Link>
+                  </li>
                 </ol>
               </li>
             </ul>
