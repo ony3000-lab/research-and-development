@@ -12,3 +12,6 @@ export { HookedCounter } from './components/HookedCounter';
 
 // 4. Props Getters Pattern
 export { PropsGettingCounter } from './components/PropsGettingCounter';
+
+// 5. State Reducer Pattern
+export { StateReducingCounter } from './components/StateReducingCounter';
