@@ -40,10 +40,7 @@ export default function DesignPatterns() {
               <li>
                 <h3>Patterns</h3>
 
-                <ol start={0}>
-                  <li>
-                    <Link href="/design-patterns/common">Common Pattern</Link>
-                  </li>
+                <ol>
                   <li>
                     <Link href="/design-patterns/compound-components">
                       Compound Components Pattern
@@ -60,6 +57,20 @@ export default function DesignPatterns() {
                   </li>
                   <li>
                     <Link href="/design-patterns/state-reducer">State Reducer Pattern</Link>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <h3>Patterns (번외)</h3>
+
+                <ol>
+                  <li value="0">
+                    <Link href="/design-patterns/common">Common Pattern</Link>
+                  </li>
+                  <li value="6">
+                    <Link href="/design-patterns/partial-application">
+                      Partial Application Pattern
+                    </Link>
                   </li>
                 </ol>
               </li>
