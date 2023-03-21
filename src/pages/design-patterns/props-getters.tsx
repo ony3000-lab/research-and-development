@@ -3,7 +3,7 @@ import PageHead from '@/components/PageHead';
 import { PropsGettingCounter as Counter } from '@/3rd-party/Counter';
 import { useCounterWithGetters as useCounter } from '@/3rd-party/Counter/hooks';
 
-export default function PropsGetters() {
+export default function PropsGettersPattern() {
   const { getCounterProps, getDecrementProps, getIncrementProps } = useCounter(0);
 
   const { onClick: incrementHandler } = getIncrementProps();

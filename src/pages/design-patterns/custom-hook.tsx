@@ -2,7 +2,7 @@ import PageHead from '@/components/PageHead';
 import { HookedCounter as Counter } from '@/3rd-party/Counter';
 import { useCounter } from '@/3rd-party/Counter/hooks';
 
-export default function CustomHook() {
+export default function CustomHookPattern() {
   const {
     count: firstCount,
     decrementHandler: firstDecrementHandler,

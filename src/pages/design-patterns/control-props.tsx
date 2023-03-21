@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PageHead from '@/components/PageHead';
 import { ControlledCounter as Counter } from '@/3rd-party/Counter';
 
-export default function ControlProps() {
+export default function ControlPropsPattern() {
   const [firstCount, setFirstCount] = useState(0);
   const [secondCount, setSecondCount] = useState(0);
 

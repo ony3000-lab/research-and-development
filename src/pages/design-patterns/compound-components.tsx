@@ -2,7 +2,7 @@ import { ArrowDownIcon } from '@heroicons/react/24/solid';
 import PageHead from '@/components/PageHead';
 import { CompoundCounter as Counter } from '@/3rd-party/Counter';
 
-export default function CompoundComponents() {
+export default function CompoundComponentsPattern() {
   return (
     <>
       <PageHead title="Compound Components Pattern" />

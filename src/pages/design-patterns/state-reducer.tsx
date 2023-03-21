@@ -25,7 +25,7 @@ const secondReducer = (state: CounterState, action: CounterAction) => {
   }
 };
 
-export default function StateReducer() {
+export default function StateReducerPattern() {
   const {
     count: firstCount,
     decrementHandler: firstDecrementHandler,
