@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MinusIcon, PlusIcon } from '@heroicons/react/24/solid';
+import { CounterContainer } from './layouts';
 
 type NaiveCounterProps = {
   label?: string;
@@ -33,7 +34,7 @@ export default function NaiveCounter({
   };
 
   return (
-    <div className="inline-flex items-center space-x-1 rounded-md border-2 border-solid border-blue-500 dark:border-sky-400">
+    <CounterContainer>
       <button
         type="button"
         className="rounded-md p-1"
@@ -50,6 +51,6 @@ export default function NaiveCounter({
       >
         <PlusIcon className="h-6 w-6" />
       </button>
-    </div>
+    </CounterContainer>
   );
 }

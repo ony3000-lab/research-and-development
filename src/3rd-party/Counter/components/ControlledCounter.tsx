@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { useState, useMemo } from 'react';
 import type { CounterContextState } from '../contexts';
 import { CounterContext } from '../contexts';
+import { CounterContainer } from '../layouts';
 
 // 재사용
 import {
@@ -46,9 +47,7 @@ function ControlledCounter({
 
   return (
     <CounterContext.Provider value={contextState}>
-      <div className="inline-flex items-center space-x-1 rounded-md border-2 border-solid border-blue-500 dark:border-sky-400">
-        {children}
-      </div>
+      <CounterContainer>{children}</CounterContainer>
     </CounterContext.Provider>
   );
 }
