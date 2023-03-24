@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { MinusIcon, PlusIcon } from '@heroicons/react/24/solid';
 
-type CommonCounterProps = {
+type NaiveCounterProps = {
   label?: string;
   max?: number;
   onChange?: (newCount: number) => void;
 };
 
-export default function CommonCounter({
+export default function NaiveCounter({
   label = 'Counter',
   max = Infinity,
   onChange = undefined,
-}: CommonCounterProps) {
+}: NaiveCounterProps) {
   const min = 0;
   const [count, setCount] = useState(min);
 

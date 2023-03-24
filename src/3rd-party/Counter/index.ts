@@ -1,5 +1,5 @@
-// 0. Common Pattern
-export { default as CommonCounter } from './components/CommonCounter';
+// 0. Naive Pattern
+export { default as NaiveCounter } from './NaiveCounter';
 
 // 1. Compound Components Pattern
 export { CompoundCounter } from './components/CompoundCounter';

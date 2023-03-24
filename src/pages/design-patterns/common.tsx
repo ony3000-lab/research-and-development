@@ -1,5 +1,5 @@
 import PageHead from '@/components/PageHead';
-import { CommonCounter as Counter } from '@/3rd-party/Counter';
+import { NaiveCounter as Counter } from '@/3rd-party/Counter';
 
 export default function CommonPattern() {
   return (
