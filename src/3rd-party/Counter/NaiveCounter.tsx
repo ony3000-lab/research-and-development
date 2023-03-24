@@ -1,14 +1,12 @@
 import { useState } from 'react';
-import type { IconName } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CounterContainer } from './layouts';
 
 type NaiveCounterProps = {
   label?: string;
   min?: number;
   max?: number;
-  iconDecrement?: IconName;
-  iconIncrement?: IconName;
+  iconDecrement?: string;
+  iconIncrement?: string;
   onChange?: (newCount: number) => void;
 };
 
@@ -39,25 +37,23 @@ export default function NaiveCounter({
     <CounterContainer>
       <button
         type="button"
-        className="rounded-md p-1"
+        className="inline-flex items-center justify-center rounded-md p-1"
         onClick={decrementHandler}
       >
-        <FontAwesomeIcon
-          icon={['fas', iconDecrement]}
-          className="h-5 w-5"
-        />
+        <span className="inline-flex h-5 w-5 items-center justify-center text-[18px]">
+          <i className={`fa-solid fa-${iconDecrement}`} />
+        </span>
       </button>
       <span className="px-1">{label}</span>
       <span className="px-1 font-bold">{count}</span>
       <button
         type="button"
-        className="rounded-md p-1"
+        className="inline-flex items-center justify-center rounded-md p-1"
         onClick={incrementHandler}
       >
-        <FontAwesomeIcon
-          icon={['fas', iconIncrement]}
-          className="h-5 w-5"
-        />
+        <span className="inline-flex h-5 w-5 items-center justify-center text-[18px]">
+          <i className={`fa-solid fa-${iconIncrement}`} />
+        </span>
       </button>
     </CounterContainer>
   );
