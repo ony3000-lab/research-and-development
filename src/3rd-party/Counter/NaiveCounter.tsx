@@ -1,35 +1,37 @@
 import { useState } from 'react';
-import { MinusIcon, PlusIcon } from '@heroicons/react/24/solid';
+import type { IconName } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CounterContainer } from './layouts';
 
 type NaiveCounterProps = {
   label?: string;
+  min?: number;
   max?: number;
+  iconDecrement?: IconName;
+  iconIncrement?: IconName;
   onChange?: (newCount: number) => void;
 };
 
 export default function NaiveCounter({
   label = 'Counter',
+  min = 0,
   max = Infinity,
+  iconDecrement = 'minus',
+  iconIncrement = 'plus',
   onChange = undefined,
 }: NaiveCounterProps) {
-  const min = 0;
-  const [count, setCount] = useState(min);
+  const [count, setCount] = useState(0);
 
   const decrementHandler = () => {
     if (count > min) {
-      const newCount = count - 1;
-
-      setCount(newCount);
-      onChange?.(newCount);
+      setCount((prevCount) => prevCount - 1);
+      onChange?.(count - 1);
     }
   };
   const incrementHandler = () => {
     if (count < max) {
-      const newCount = count + 1;
-
-      setCount(newCount);
-      onChange?.(newCount);
+      setCount((prevCount) => prevCount + 1);
+      onChange?.(count + 1);
     }
   };
 
@@ -40,7 +42,10 @@ export default function NaiveCounter({
         className="rounded-md p-1"
         onClick={decrementHandler}
       >
-        <MinusIcon className="h-6 w-6" />
+        <FontAwesomeIcon
+          icon={['fas', iconDecrement]}
+          className="h-5 w-5"
+        />
       </button>
       <span className="px-1">{label}</span>
       <span className="px-1 font-bold">{count}</span>
@@ -49,7 +54,10 @@ export default function NaiveCounter({
         className="rounded-md p-1"
         onClick={incrementHandler}
       >
-        <PlusIcon className="h-6 w-6" />
+        <FontAwesomeIcon
+          icon={['fas', iconIncrement]}
+          className="h-5 w-5"
+        />
       </button>
     </CounterContainer>
   );
