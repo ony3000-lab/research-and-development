@@ -1,12 +1,12 @@
 import PageHead from '@/components/PageHead';
 import { NaiveCounter as Counter } from '@/3rd-party/Counter';
 
-export default function CommonPattern() {
+export default function NaivePattern() {
   return (
     <>
-      <PageHead title="Common Pattern" />
+      <PageHead title="Naive Pattern" />
       <main className="prose mx-auto min-h-screen p-8 dark:prose-invert">
-        <h1>Common Pattern</h1>
+        <h1>Naive Pattern</h1>
 
         <p>
           특별한 설계 패턴 없이, 한 덩어리의 컴포넌트 내부에 prop, state, event handler 등을 모두

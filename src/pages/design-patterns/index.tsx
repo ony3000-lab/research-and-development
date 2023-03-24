@@ -65,7 +65,7 @@ export default function DesignPatterns() {
 
                 <ol>
                   <li value="0">
-                    <Link href="/design-patterns/common">Common Pattern</Link>
+                    <Link href="/design-patterns/naive">Naive Pattern</Link>
                   </li>
                   <li value="6">
                     <Link href="/design-patterns/partial-application">
