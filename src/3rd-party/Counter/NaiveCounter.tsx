@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CounterContainer } from './layouts';
+import { CounterButton } from './parts';
 
 type NaiveCounterProps = {
   label?: string;
@@ -35,26 +36,16 @@ export default function NaiveCounter({
 
   return (
     <CounterContainer>
-      <button
-        type="button"
-        className="inline-flex items-center justify-center rounded-md p-1"
+      <CounterButton
+        icon={iconDecrement}
         onClick={decrementHandler}
-      >
-        <span className="inline-flex h-5 w-5 items-center justify-center text-[18px]">
-          <i className={`fa-solid fa-${iconDecrement}`} />
-        </span>
-      </button>
+      />
       <span className="px-1">{label}</span>
       <span className="px-1 font-bold">{count}</span>
-      <button
-        type="button"
-        className="inline-flex items-center justify-center rounded-md p-1"
+      <CounterButton
+        icon={iconIncrement}
         onClick={incrementHandler}
-      >
-        <span className="inline-flex h-5 w-5 items-center justify-center text-[18px]">
-          <i className={`fa-solid fa-${iconIncrement}`} />
-        </span>
-      </button>
+      />
     </CounterContainer>
   );
 }
