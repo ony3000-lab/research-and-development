@@ -9,15 +9,27 @@ export default function NaivePattern() {
         <h1>Naive Pattern</h1>
 
         <p>
-          특별한 설계 패턴 없이, 한 덩어리의 컴포넌트 내부에 prop, state, event handler 등을 모두
-          정의하는 방법. 가장 흔한 방법이다.
+          한 덩어리의 컴포넌트 내부에 prop, state, event handler 등을 모두 정의하는, 가장 단순한
+          패턴이다. 이 덩어리를 작은 조각으로 나누는 설계를 적용했을 때, 조각 중 일부는 이 패턴이 될
+          수도 있다.
         </p>
 
         <section>
           <h2>주관적 장점</h2>
 
           <ul>
-            <li>컴포넌트 규모가 작을 수록 빨리 만들 수 있다.</li>
+            <li>
+              <p>
+                낮은 진입 장벽: 제작자가 학습해야 할 내용이 많지 않다. 실험적인 컴포넌트를 제작할 때
+                설계 패턴을 추가로 학습해야 한다면, 생산성이 떨어질 수 있다.
+              </p>
+            </li>
+            <li>
+              <p>
+                사용하기 쉬움: 개발자는 완성된 컴포넌트를 가져와서, 그것이 렌더링 되어야 할 위치에
+                적절한 prop과 함께 배치하기만 하면 된다.
+              </p>
+            </li>
           </ul>
         </section>
 
@@ -25,18 +37,35 @@ export default function NaivePattern() {
           <h2>주관적 단점</h2>
 
           <ul>
-            <li>컴포넌트 규모가 클 수록 variation을 주기 어렵다.</li>
+            <li>
+              <p>
+                유지보수의 어려움: 모든 로직이 컴포넌트 내부에 존재하므로, 특정 케이스를 처리하기
+                위해서는 새로운 prop과 분기 처리 로직이 필요한데, 이것들은 컴포넌트의 규모가 커질
+                수록 디버깅을 어렵게 만들 것이다.
+              </p>
+            </li>
+            <li>
+              <p>
+                제어권 부족: 개발자의 자체 로직을 컴포넌트 내부 로직에 끼워넣거나, 컴포넌트 내부
+                상태를 직접적으로 참조할 수 있는 방법이 없다. prop으로 콜백을 전달할 수 있다면
+                간접적으로나마 구현할 수 있다.
+              </p>
+            </li>
           </ul>
         </section>
 
         <section>
           <h2>사용 예</h2>
 
-          <Counter
-            label="Counter"
-            max={10}
-            onChange={(newCount) => console.log('count changed:', newCount)}
-          />
+          <div>
+            <Counter
+              label="Counter"
+              max={10}
+              iconDecrement="minus"
+              iconIncrement="plus"
+              onChange={(newCount) => console.log('count changed:', newCount)}
+            />
+          </div>
         </section>
       </main>
     </>
