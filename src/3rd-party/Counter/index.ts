@@ -5,7 +5,7 @@ export { default as NaiveCounter } from './NaiveCounter';
 export { default as CompoundCounter } from './CompoundCounter';
 
 // 2. Control Props Pattern
-export { ControlledCounter } from './components/ControlledCounter';
+export { ControlledCounter } from './ControlledCounter';
 
 // 3. Custom Hook Pattern
 export { HookedCounter } from './components/HookedCounter';
