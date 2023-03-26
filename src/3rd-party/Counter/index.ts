@@ -2,7 +2,7 @@
 export { default as NaiveCounter } from './NaiveCounter';
 
 // 1. Compound Components Pattern
-export { CompoundCounter } from './CompoundCounter';
+export { default as CompoundCounter } from './CompoundCounter';
 
 // 2. Control Props Pattern
 export { ControlledCounter } from './components/ControlledCounter';
