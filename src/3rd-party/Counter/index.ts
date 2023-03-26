@@ -8,7 +8,7 @@ export { default as CompoundCounter } from './CompoundCounter';
 export { default as ControlledCounter } from './ControlledCounter';
 
 // 3. Custom Hook Pattern
-export { HookedCounter } from './components/HookedCounter';
+export { HookedCounter } from './HookedCounter';
 
 // 4. Props Getters Pattern
 export { PropsGettingCounter } from './components/PropsGettingCounter';
