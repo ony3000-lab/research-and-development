@@ -1,16 +1,18 @@
-import type { ReactNode } from 'react';
-import { useMemo } from 'react';
-import type { CounterContextWithHookState } from './contexts';
-import { CounterContextWithHook } from './contexts';
+import type { ComponentProps } from 'react';
+import { createContext, useContext, useState, useMemo } from 'react';
 import { CounterContainer } from './layouts';
-import { CounterCount, CounterDecrement, CounterIncrement } from './components/HookedCounter/parts';
+import { CounterButton } from './parts';
 
-// 재사용
-import { CounterLabel } from './components/CompoundCounter/parts';
+type CounterContextWithHookState = {
+  count: number;
+};
 
-type HookedCounterProps = {
+const CounterContextWithHook = createContext<CounterContextWithHookState>({
+  count: 0,
+});
+
+type HookedCounterProps = Pick<Parameters<typeof CounterContainer>[0], 'children'> & {
   value: number;
-  children?: ReactNode;
 };
 
 function HookedCounter({ value, children = null }: HookedCounterProps) {
@@ -28,9 +30,67 @@ function HookedCounter({ value, children = null }: HookedCounterProps) {
   );
 }
 
-HookedCounter.Count = CounterCount;
-HookedCounter.Decrement = CounterDecrement;
-HookedCounter.Increment = CounterIncrement;
-HookedCounter.Label = CounterLabel;
+HookedCounter.Count = function CounterCount() {
+  const { count } = useContext(CounterContextWithHook);
 
-export { HookedCounter };
+  return <span className="px-1 font-bold">{count}</span>;
+};
+
+type CounterDecrementProps = {
+  icon?: string;
+  onClick?: () => void;
+};
+
+HookedCounter.Decrement = function CounterDecrement({
+  icon = 'minus',
+  onClick = undefined,
+}: CounterDecrementProps) {
+  return (
+    <CounterButton
+      icon={icon}
+      onClick={onClick}
+    />
+  );
+};
+
+type CounterIncrementProps = {
+  icon?: string;
+  onClick?: () => void;
+};
+
+HookedCounter.Increment = function CounterIncrement({
+  icon = 'plus',
+  onClick = undefined,
+}: CounterIncrementProps) {
+  return (
+    <CounterButton
+      icon={icon}
+      onClick={onClick}
+    />
+  );
+};
+
+type CounterLabelProps = ComponentProps<'span'>;
+
+HookedCounter.Label = function CounterLabel({ children }: CounterLabelProps) {
+  return <span className="px-1">{children}</span>;
+};
+
+export default HookedCounter;
+
+export function useCounter(initialCount: number) {
+  const [count, setCount] = useState(initialCount);
+
+  const decrementHandler = () => {
+    setCount((prevCount) => prevCount - 1);
+  };
+  const incrementHandler = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  return {
+    count,
+    decrementHandler,
+    incrementHandler,
+  };
+}
