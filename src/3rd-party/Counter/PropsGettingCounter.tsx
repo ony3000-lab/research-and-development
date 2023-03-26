@@ -1,16 +1,18 @@
-import type { ReactNode } from 'react';
-import { useMemo } from 'react';
-import type { CounterContextWithHookState } from './contexts';
-import { CounterContextWithHook } from './contexts';
+import type { ComponentProps } from 'react';
+import { createContext, useContext, useState, useMemo } from 'react';
 import { CounterContainer } from './layouts';
+import { CounterButton } from './parts';
 
-// 재사용
-import { CounterCount, CounterDecrement, CounterIncrement } from './components/HookedCounter/parts';
-import { CounterLabel } from './components/CompoundCounter/parts';
+type CounterContextWithHookState = {
+  count: number;
+};
 
-export type PropsGettingCounterProps = {
+const CounterContextWithHook = createContext<CounterContextWithHookState>({
+  count: 0,
+});
+
+export type PropsGettingCounterProps = Pick<Parameters<typeof CounterContainer>[0], 'children'> & {
   value: number;
-  children?: ReactNode;
 };
 
 function PropsGettingCounter({ value, children = null }: PropsGettingCounterProps) {
@@ -28,9 +30,89 @@ function PropsGettingCounter({ value, children = null }: PropsGettingCounterProp
   );
 }
 
-PropsGettingCounter.Count = CounterCount;
-PropsGettingCounter.Decrement = CounterDecrement;
-PropsGettingCounter.Increment = CounterIncrement;
-PropsGettingCounter.Label = CounterLabel;
+PropsGettingCounter.Count = function CounterCount() {
+  const { count } = useContext(CounterContextWithHook);
 
-export { PropsGettingCounter };
+  return <span className="px-1 font-bold">{count}</span>;
+};
+
+type CounterDecrementProps = {
+  icon?: string;
+  onClick?: () => void;
+};
+
+PropsGettingCounter.Decrement = function CounterDecrement({
+  icon = 'minus',
+  onClick = undefined,
+}: CounterDecrementProps) {
+  return (
+    <CounterButton
+      icon={icon}
+      onClick={onClick}
+    />
+  );
+};
+
+type CounterIncrementProps = {
+  icon?: string;
+  onClick?: () => void;
+};
+
+PropsGettingCounter.Increment = function CounterIncrement({
+  icon = 'plus',
+  onClick = undefined,
+}: CounterIncrementProps) {
+  return (
+    <CounterButton
+      icon={icon}
+      onClick={onClick}
+    />
+  );
+};
+
+type CounterLabelProps = ComponentProps<'span'>;
+
+PropsGettingCounter.Label = function CounterLabel({ children }: CounterLabelProps) {
+  return <span className="px-1">{children}</span>;
+};
+
+export default PropsGettingCounter;
+
+export function useCounterWithGetters(initialCount: number) {
+  const [count, setCount] = useState(initialCount);
+
+  const decrementHandler = () => {
+    setCount((prevCount) => prevCount - 1);
+  };
+  const incrementHandler = () => {
+    setCount((prevCount) => prevCount + 1);
+  };
+
+  const getCounterProps = (
+    props?: Partial<Omit<PropsGettingCounterProps, 'children'>>,
+  ): PropsGettingCounterProps => ({
+    value: count,
+    ...props,
+  });
+  const getDecrementProps = (
+    props?: Partial<CounterDecrementProps>,
+  ): Required<CounterDecrementProps> => ({
+    icon: 'minus',
+    onClick: decrementHandler,
+    ...props,
+  });
+  const getIncrementProps = (
+    props?: Partial<CounterIncrementProps>,
+  ): Required<CounterIncrementProps> => ({
+    icon: 'plus',
+    onClick: incrementHandler,
+    ...props,
+  });
+
+  return {
+    count,
+    getCounterProps,
+    getDecrementProps,
+    getIncrementProps,
+  };
+}
