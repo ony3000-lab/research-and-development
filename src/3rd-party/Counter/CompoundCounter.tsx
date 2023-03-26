@@ -1,9 +1,14 @@
 import type { ReactNode } from 'react';
 import { useState, useMemo } from 'react';
-import type { CounterContextState } from '../../contexts';
-import { CounterContext } from '../../contexts';
-import { CounterContainer } from '../../layouts';
-import { CounterCount, CounterDecrement, CounterIncrement, CounterLabel } from './parts';
+import type { CounterContextState } from './contexts';
+import { CounterContext } from './contexts';
+import { CounterContainer } from './layouts';
+import {
+  CounterCount,
+  CounterDecrement,
+  CounterIncrement,
+  CounterLabel,
+} from './components/CompoundCounter/parts';
 
 type CompoundCounterProps = {
   onChange?: (newCount: number) => void;
