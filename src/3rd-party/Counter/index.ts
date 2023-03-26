@@ -11,7 +11,7 @@ export { default as ControlledCounter } from './ControlledCounter';
 export { default as HookedCounter, useCounter } from './HookedCounter';
 
 // 4. Props Getters Pattern
-export { PropsGettingCounter } from './components/PropsGettingCounter';
+export { PropsGettingCounter } from './PropsGettingCounter';
 
 // 5. State Reducer Pattern
 export { StateReducingCounter } from './components/StateReducingCounter';
