@@ -1,7 +1,9 @@
 import PageHead from '@/components/PageHead';
-import { StateReducingCounter as Counter } from '@/3rd-party/Counter';
-import type { CounterState, CounterAction } from '@/3rd-party/Counter/hooks';
-import { useCounterWithReducer as useCounter } from '@/3rd-party/Counter/hooks';
+import type { CounterState, CounterAction } from '@/3rd-party/Counter';
+import {
+  StateReducingCounter as Counter,
+  useCounterWithReducer as useCounter,
+} from '@/3rd-party/Counter';
 
 const firstReducer = (state: CounterState, action: CounterAction) => {
   switch (action.type) {
@@ -50,12 +52,12 @@ export default function StateReducerPattern() {
         <h1>State Reducer Pattern</h1>
 
         <p>
-          제어권 역전 측면에서 가장 진보된 패턴이다. 컴포넌트가 내부적으로 작동하는 방식을 개발자가
-          변경할 수 있는 진보된 방법을 제공한다.
+          개발자에게 제어권을 넘기는 측면에서 가장 진보된 패턴이다. 개발자가 컴포넌트의 내부 작동
+          방식을 변경할 수 있는 고급 방법을 제공한다.
         </p>
         <p>
           이 코드는 <code>Custom Hook Pattern</code>과 유사하지만, hook에 전달되는{' '}
-          <code>reducer</code>가 추가된다. 이 <code>reducer</code>는 컴포넌트의 모든 내부 작업을
+          <code>reducer</code>가 추가되었다. 이 <code>reducer</code>는 컴포넌트의 모든 내부 동작을
           재정의할 수 있다.
         </p>
 
@@ -66,8 +68,8 @@ export default function StateReducerPattern() {
             <li>
               <p>
                 더 많은 제어권 제공: 가장 복잡한 케이스에서는, state reducer를 사용하는 것이
-                개발자에게 제어권을 맡기는 가장 좋은 방법이다. 이제 <code>useCounter</code>의 모든
-                내부 action은 외부에서 접근할 수 있고 재정의도 할 수 있다.
+                개발자에게 제어권을 맡기는 가장 좋은 방법이다. <code>useCounter</code>의 모든 내부
+                action은 이제 외부에서 접근할 수 있고 재정의도 할 수 있다.
               </p>
             </li>
           </ul>
@@ -79,8 +81,7 @@ export default function StateReducerPattern() {
           <ul>
             <li>
               <p>
-                구현 복잡성: 이 패턴은 아마도, 컴포넌트를 구현하는 사람과 사용하는 사람 모두에게
-                가장 구현하기 복잡할 것이다.
+                구현 복잡성: 이 패턴은 제작자와 개발자 모두에게 구현하기 가장 복잡한 패턴일 것이다.
               </p>
             </li>
             <li>
