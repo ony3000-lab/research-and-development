@@ -30,8 +30,8 @@ export default function PropsGettersPattern() {
         </p>
 
         <blockquote>
-          여기서 <code>getter</code>란 많은 prop들을 반환하는 함수이며, 의미있는 이름을 가지고
-          있어서, 어떤 <code>getter</code>가 어떤 JSX 요소에 해당하는지 개발자가 명확하게 알 수
+          여기서 <code>getter</code>란 많은 prop들을 반환하는 함수이며, 의미있는 이름을 가지고 있기
+          때문에, 어떤 <code>getter</code>가 어떤 JSX 요소에 해당하는지 개발자가 명확하게 알 수
           있다.
         </blockquote>
 
@@ -62,7 +62,7 @@ export default function PropsGettersPattern() {
                 가시성 부족: <code>getter</code>는 컴포넌트를 통합하기 쉽게 만드는 추상화를
                 가져왔지만, 동시에 더 불투명하고 &ldquo;마법&rdquo;처럼 이해하기 어렵다. 개발자는
                 노출된 getter prop과 영향을 받는 내부 로직을 잘 이해해야 제대로 재정의할 수 있다. (
-                <code>TypeScript</code>가 도움이 될 것.)
+                <code>TypeScript</code>가 도움이 될 것이다.)
               </p>
             </li>
           </ul>
