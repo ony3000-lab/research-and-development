@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --ci --passWithNoTests",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "unimported": "unimported"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "6.3.0",
