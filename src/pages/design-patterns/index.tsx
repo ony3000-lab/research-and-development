@@ -42,7 +42,7 @@ export default function DesignPatterns() {
 
                 <ol start={0}>
                   <li>
-                    <Link href="/design-patterns/common">Common Pattern</Link>
+                    <Link href="/design-patterns/naive">Naive Pattern</Link>
                   </li>
                   <li>
                     <Link href="/design-patterns/compound-components">
