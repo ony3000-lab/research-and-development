@@ -10,9 +10,26 @@
   ],
   "ignoreUnimported": [],
   "ignoreUnused": [
+    "@tailwindcss/forms",
+    "@tailwindcss/typography",
+    "@testing-library/jest-dom",
+    "@testing-library/react",
+    "@types/node",
+    "@types/react",
+    "@types/react-dom",
+    "@types/testing-library__jest-dom",
+    "autoprefixer",
+    "eslint-config-airbnb",
+    "eslint-config-airbnb-typescript",
+    "eslint-config-next",
+    "eslint-config-prettier",
+    "jest",
+    "jest-environment-jsdom",
     "next",
+    "prettier-plugin-tailwindcss",
     "react",
-    "react-dom"
+    "react-dom",
+    "unimported"
   ],
   "ignoreUnresolved": []
 }
