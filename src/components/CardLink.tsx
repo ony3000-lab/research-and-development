@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Inter } from 'next/font/google';
 import classNames from 'classnames';
 
@@ -11,7 +12,7 @@ type CardLinkProps = {
 
 export default function CardLink({ href, title, description }: CardLinkProps) {
   return (
-    <a
+    <Link
       href={href}
       className={classNames(
         'group rounded-xl border border-solid py-4 px-10 transition-colors duration-200 ease-ease',
@@ -21,8 +22,6 @@ export default function CardLink({ href, title, description }: CardLinkProps) {
         'non-touch-device:hover:border-zinc-500/[.15] non-touch-device:hover:bg-gray-400/10',
         'dark:non-touch-device:hover:border-stone-300/[.15] dark:non-touch-device:hover:bg-stone-500/10',
       )}
-      target="_blank"
-      rel="noopener noreferrer"
     >
       <h2 className={classNames(inter.className, 'mb-2 font-semibold tablet:mb-[11.2px]')}>
         {title}{' '}
@@ -43,6 +42,6 @@ export default function CardLink({ href, title, description }: CardLinkProps) {
       >
         {description}
       </p>
-    </a>
+    </Link>
   );
 }
