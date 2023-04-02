@@ -21,7 +21,7 @@ export default function ControlPropsPattern() {
   return (
     <>
       <PageHead title="Control Props Pattern" />
-      <main className="prose min-h-screen p-8 dark:prose-invert">
+      <main className="prose mx-auto min-h-screen p-8 dark:prose-invert">
         <h1>Control Props Pattern</h1>
 
         <p>

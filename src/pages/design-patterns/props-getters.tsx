@@ -17,7 +17,7 @@ export default function PropsGettersPattern() {
   return (
     <>
       <PageHead title="Props Getters Pattern" />
-      <main className="prose min-h-screen p-8 dark:prose-invert">
+      <main className="prose mx-auto min-h-screen p-8 dark:prose-invert">
         <h1>Props Getters Pattern</h1>
 
         <p>
