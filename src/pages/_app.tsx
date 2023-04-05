@@ -1,7 +1,13 @@
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
+import classNames from 'classnames';
+import { pretendard } from '@/fonts';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <main className={classNames(pretendard.variable, 'font-sans')}>
+      <Component {...pageProps} />
+    </main>
+  );
 }

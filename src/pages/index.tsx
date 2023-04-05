@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <PageHead />
-      <main
+      <div
         className={classNames(
           'flex min-h-screen flex-col gap-8 px-5 py-8',
           'sm:gap-16 sm:px-12 sm:py-16',
@@ -33,7 +33,7 @@ export default function Home() {
             description="리액트 컴포넌트 설계 패턴"
           />
         </div>
-      </main>
+      </div>
     </>
   );
 }
