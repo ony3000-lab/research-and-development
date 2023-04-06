@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev:client": "next dev",
+    "dev:api": "json-server --watch db.json --port 3500 --no-cors",
+    "dev": "concurrently -c \"auto\" \"pnpm run dev:client\" \"pnpm run dev:api\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
