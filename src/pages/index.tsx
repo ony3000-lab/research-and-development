@@ -32,6 +32,12 @@ export default function Home() {
             title="Design Patterns"
             description="리액트 컴포넌트 설계 패턴"
           />
+
+          <BoxLink
+            href="/state-management"
+            title="State Management"
+            description="리액트 상태 관리"
+          />
         </div>
       </div>
     </>
