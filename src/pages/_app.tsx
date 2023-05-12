@@ -1,9 +1,9 @@
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
-import classNames from 'classnames';
 import { RecoilRoot } from 'recoil';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { classNames } from '@/adaptors';
 import { pretendard } from '@/fonts';
 
 const queryClient = new QueryClient();
