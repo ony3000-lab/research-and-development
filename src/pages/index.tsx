@@ -35,6 +35,12 @@ export default function Home() {
             title="State Management"
             description="리액트 상태 관리"
           />
+
+          <BoxLink
+            href="/lifecycle-test"
+            title="Lifecycle Test"
+            description="리액트 생명주기 테스트"
+          />
         </div>
       </div>
     </>
