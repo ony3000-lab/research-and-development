@@ -36,6 +36,18 @@ export default function VAC() {
               </li>
             </ol>
           </li>
+          <li>
+            <h2>로그인 폼 구현 예시</h2>
+
+            <ol>
+              <li>
+                <Link href="/vac/login-normal">Normal Pattern</Link>
+              </li>
+              <li>
+                <Link href="/vac/login-vac">VAC Pattern</Link>
+              </li>
+            </ol>
+          </li>
         </ul>
       </main>
     </>
