@@ -41,6 +41,12 @@ export default function Home() {
             title="Lifecycle Test"
             description="리액트 생명주기 테스트"
           />
+
+          <BoxLink
+            href="/vac"
+            title="Design Pattern: VAC"
+            description="리액트 컴포넌트 설계 패턴: VAC"
+          />
         </div>
       </div>
     </>
