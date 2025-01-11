@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import PageHead from '@/components/PageHead';
 
 export default function VAC() {
@@ -22,6 +23,18 @@ export default function VAC() {
                 </a>
               </li>
             </ul>
+          </li>
+          <li>
+            <h2>Counter 컴포넌트 구현 예시</h2>
+
+            <ol>
+              <li>
+                <Link href="/vac/normal-pattern">Normal Pattern</Link>
+              </li>
+              <li>
+                <Link href="/vac/vac-pattern">VAC Pattern</Link>
+              </li>
+            </ol>
           </li>
         </ul>
       </main>
