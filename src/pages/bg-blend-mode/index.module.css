@@ -1,0 +1,13 @@
+.blend-box {
+  width: 160px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+}
+
+.blend-box.is-dark {
+  color: white;
+}
