@@ -46,6 +46,9 @@ export default function VAC() {
               <li>
                 <Link href="/vac/login-vac">VAC Pattern</Link>
               </li>
+              <li>
+                <Link href="/vac/login-custom-hook">(번외) Custom Hook Pattern</Link>
+              </li>
             </ol>
           </li>
         </ul>
