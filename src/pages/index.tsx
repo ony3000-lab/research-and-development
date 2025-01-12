@@ -47,6 +47,12 @@ export default function Home() {
             title="Design Pattern: VAC"
             description="리액트 컴포넌트 설계 패턴: VAC"
           />
+
+          <BoxLink
+            href="/bg-blend-mode"
+            title="Background Blend Mode"
+            description="배경색 혼합 방법"
+          />
         </div>
       </div>
     </>
