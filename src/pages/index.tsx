@@ -53,6 +53,12 @@ export default function Home() {
             title="Background Blend Mode"
             description="배경색 혼합 방법"
           />
+
+          <BoxLink
+            href="/clean-architecture"
+            title="Clean Architecture"
+            description="클린 아키텍처"
+          />
         </div>
       </div>
     </>
