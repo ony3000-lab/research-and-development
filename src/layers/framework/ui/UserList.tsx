@@ -5,23 +5,27 @@ export function UserList() {
   const [keyword, setKeyword] = useState('');
   const { isLoading, data: users } = useUsersQuery({ search: keyword });
 
-  if (isLoading) return <p>Loading...</p>;
-
   return (
-    <div>
+    <div className="my-2 space-y-2">
       <input
         type="text"
         placeholder="검색어를 입력하세요"
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
       />
-      <ul>
-        {users?.map((user) => (
-          <li key={user.id}>
-            {user.name} ({user.email})
-          </li>
-        ))}
-      </ul>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <table className="[&_td]:p-1">
+          {users?.map((user) => (
+            <tr key={user.id}>
+              <td>{user.id}</td>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+            </tr>
+          ))}
+        </table>
+      )}
     </div>
   );
 }
