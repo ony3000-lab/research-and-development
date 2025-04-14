@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import { useUsersQuery } from '../stores/userStore';
 
 export function UserList() {
@@ -22,6 +23,9 @@ export function UserList() {
               <td>{user.id}</td>
               <td>{user.name}</td>
               <td>{user.email}</td>
+              <td>
+                <Link href={`/clean-architecture/${user.id}`}>상세</Link>
+              </td>
             </tr>
           ))}
         </table>

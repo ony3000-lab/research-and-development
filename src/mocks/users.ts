@@ -25,6 +25,10 @@ class MockUserDB {
   getAll() {
     return this.users.slice();
   }
+
+  getOne(userId: number) {
+    return this.users.find(({ id }) => id === userId);
+  }
 }
 
 export const mockUserDB = new MockUserDB(randomUsers);
