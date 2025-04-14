@@ -1,8 +1,15 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import type { User } from '@/layers/domain/User';
+import type { User, UserDetail } from '@/layers/domain/User';
 import { mockUserDB } from '@/mocks/users';
 
-export default function handler(req: NextApiRequest, res: NextApiResponse<User[]>) {
+export default function handler(req: NextApiRequest, res: NextApiResponse<User[] | UserDetail>) {
+  if (req.method === 'POST') {
+    const newUser = mockUserDB.createOne(req.body);
+
+    res.status(200).json(newUser);
+    return;
+  }
+
   const { search } = req.query;
   const users = mockUserDB
     .getAll()

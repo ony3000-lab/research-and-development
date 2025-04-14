@@ -1,6 +1,5 @@
-import Link from 'next/link';
 import PageHead from '@/components/PageHead';
-import { UserList } from '@/layers/framework/ui/UserList';
+import { UserForm } from '@/layers/framework/ui/UserForm';
 
 export default function CleanArchitecture() {
   return (
@@ -10,10 +9,7 @@ export default function CleanArchitecture() {
         <h1>Clean Architecture</h1>
 
         <div>
-          <div>
-            <Link href="/clean-architecture/new">새 유저 생성</Link>
-          </div>
-          <UserList />
+          <UserForm />
         </div>
       </main>
     </>

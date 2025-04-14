@@ -29,7 +29,10 @@ export function UserForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="my-2 space-y-2"
+    >
       <div>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label>이름</label>

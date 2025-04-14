@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker/locale/en';
-import type { UserDetail } from '../layers/domain/User';
+import type { User, UserDetail } from '../layers/domain/User';
 
 const nowAsMilliseconds = Date.now();
 
@@ -20,7 +20,11 @@ const randomUsers = [...Array(15)].map<UserDetail>((_, index) => {
 });
 
 class MockUserDB {
-  constructor(private users: UserDetail[]) {}
+  private nextPK: number;
+
+  constructor(private users: UserDetail[]) {
+    this.nextPK = users.length + 1;
+  }
 
   getAll() {
     return this.users.slice();
@@ -28,6 +32,21 @@ class MockUserDB {
 
   getOne(userId: number) {
     return this.users.find(({ id }) => id === userId);
+  }
+
+  createOne({ name, email }: Omit<User, 'id'>) {
+    const newUser: UserDetail = {
+      id: this.nextPK,
+      name,
+      email,
+      contact: '',
+      createdAt: new Date().toJSON(),
+    };
+
+    this.users.push(newUser);
+    this.nextPK += 1;
+
+    return newUser;
   }
 }
 
